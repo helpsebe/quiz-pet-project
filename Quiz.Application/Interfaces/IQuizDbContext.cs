@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Quiz.Domain;
 
-namespace Quiz.Application
+namespace Quiz.Application.Interfaces
 {
     public interface IQuizDbContext
     {
