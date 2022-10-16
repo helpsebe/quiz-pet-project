@@ -20,7 +20,7 @@ namespace Quiz.Persistence
             services.AddDbContext<QuizDbContext>(options =>
             {
                 options.UseSqlServer(connectionString, m =>
-                m.MigrationsAssembly("BookStore.Persistence"));
+                m.MigrationsAssembly("Quiz.Persistence"));
             });
             services.AddScoped<IQuizDbContext>(provider =>
                 provider.GetService<QuizDbContext>());
