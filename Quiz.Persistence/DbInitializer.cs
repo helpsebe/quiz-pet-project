@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace Quiz.Persistence
         public static void Initialize(QuizDbContext context)
         {
             context.Database.EnsureCreated();
+            // we'll use this in future:
+            // context.Database.Migrate();
         }
     }
 }
