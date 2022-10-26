@@ -1,11 +1,8 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Quiz.Application.Common.Behaviors;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quiz.Application
 {
@@ -15,6 +12,9 @@ namespace Quiz.Application
            this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssemblies(new[] { Assembly.GetExecutingAssembly() });
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(ValidationBehavior<,>));
             return services;
         }
     }
