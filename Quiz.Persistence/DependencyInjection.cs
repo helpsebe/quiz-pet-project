@@ -16,7 +16,7 @@ namespace Quiz.Persistence
             this IServiceCollection services,
             IConfiguration configuration)
         {
-            var connectionString = configuration["DbConnection"];
+            var connectionString = configuration["ConnectionStrings:DbConnection"];
             services.AddDbContext<QuizDbContext>(options =>
             {
                 options.UseSqlServer(connectionString, m =>

@@ -21,7 +21,7 @@ namespace Quiz.Application.Questions.Queries.GetQuestionList
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Question, QuestionVm>();
+            profile.CreateMap<Question, QuestionLookupDto>();
         }
     }
 }

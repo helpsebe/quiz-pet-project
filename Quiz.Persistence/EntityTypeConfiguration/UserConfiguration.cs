@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Quiz.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quiz.Persistence.EntityTypeConfiguration
 {
@@ -15,7 +10,8 @@ namespace Quiz.Persistence.EntityTypeConfiguration
         {
             builder.HasKey(u => u.Id);
             builder.HasIndex(u => u.Id);
-            builder.Property(u => u.Email).HasMaxLength(30);
+            //builder.Property(u => u.Role).IsRequired();
+            builder.HasIndex(u => u.Email).IsUnique();
             builder.Property(u => u.Score).HasDefaultValue(0);
         }
     }

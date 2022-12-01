@@ -1,13 +1,12 @@
-﻿namespace Quiz.Domain
+﻿using MediatR;
+
+namespace Quiz.Application.Users.Commands.UpdateUser
 {
-    public class User
+    public class UpdateUserInformationCommand : IRequest
     {
         public Guid Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        //public string Role { get; set; }
         public string Name { get; set; }
-        public int Score { get; set; }
-        public int TimeTaken { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace Quiz.Persistence.EntityTypeConfiguration
         public void Configure(EntityTypeBuilder<Question> builder)
         {
             builder.HasKey(qstn=>qstn.Id);
-            builder.HasIndex(qstn => qstn).IsUnique();
             builder.Property(qstn => qstn.Title).HasMaxLength(40).IsRequired();
             builder.Property(qstn => qstn.Option1).HasMaxLength(60);
             builder.Property(qstn => qstn.Option2).HasMaxLength(60);
