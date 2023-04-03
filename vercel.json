@@ -1,0 +1,8 @@
+{
+  "build": {
+    "use": "@vercel/build-utils",
+    "env": {
+      "DOTNET_VERSION": "${DOTNET_VERSION}"
+    }
+  }
+}
